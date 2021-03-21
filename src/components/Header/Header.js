@@ -9,7 +9,7 @@ const Header = () => {
             {/* {{#if loggedIn}} */}
             <input type="image" src="img/vector-cartoon-cute-dogs-with-big-bone_52569-1378.jpg" name="home" alt="Submit" width="300" height="100"></input>
             {/* <h2>Welcome <span>Email</span>!</h2> */}
-            {/* {{/if}} */}
+            {/* {{/if}} */} 
             <nav id="nav">
                 <ul>
                     {/* {{#if loggedIn}} */}
