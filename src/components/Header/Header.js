@@ -6,7 +6,9 @@ const Header = () => {
         <header id="header">
             <h1>Bau Bau H<span>ome</span> D<span>elivery</span></h1>
 
-            <input type="image" src="img/vector-cartoon-cute-dogs-with-big-bone_52569-1378.jpg" name="home" alt="Submit" width="300" height="100"></input>
+            <Link to="/">
+                <input type="image" src="img/vector-cartoon-cute-dogs-with-big-bone_52569-1378.jpg" name="home" alt="Submit" width="300" height="100"></input>
+            </Link>
             {/* {{#if loggedIn}} */}
             {/* <h2>Welcome <span>Email</span>!</h2> */}
             {/* {{/if}} */}
@@ -19,7 +21,7 @@ const Header = () => {
                     <li>
                         <div className="dropdown">
                             <button className="dropbtn"><Link to="/">Meals</Link>
-                                 <i className="fa fa-caret-down"></i>
+                                <i className="fa fa-caret-down"></i>
                             </button>
                             <div className="dropdown-content">
                                 <Link to="#">Barkin’ Beef</Link>
@@ -29,7 +31,7 @@ const Header = () => {
                             </div>
                         </div>
                     </li>
-                    <li><Link to="/about">About Us</Link></li>
+                    <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to="/login">Sign In</Link></li>
                     <li><Link to="/register">Start Now</Link></li>
 

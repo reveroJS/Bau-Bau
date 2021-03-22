@@ -4,14 +4,14 @@ import { Route, Switch } from "react-router-dom";
 
 
 import Header from "./components/Header";
-import About from "./components/About";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Switch>
-      <Route path="/about" exact component={About} />
+      <Route path="/contact" exact component={ContactUs} />
       </Switch>
     </div>
   );
