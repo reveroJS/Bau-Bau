@@ -25,14 +25,14 @@ const ContactUs = () => {
                                 <span>310-386-1623</span>
                             </li>
                         </ul>
-                        <ul className="sci">
-                            <li><Link to="#"><img src="img/facebook.png" alt="facebook" /></Link></li>
-                            <li><Link to="#"><img src="img/instagram.png" alt="instagram" /></Link></li>
-                            <li><Link to="#"><img src="img/twitter.png" alt="twitter" /></Link></li>
-                            <li><Link to="#"><img src="img/pinterest.png" alt="pinterest" /></Link></li>
-                            <li><Link to="#"><img src="img/linkedin.png" alt="linkedin" /></Link></li>
-                        </ul>
                     </div>
+                    <ul className="sci">
+                        <li><Link to="#"><img src="img/facebook.png" alt="facebook" /></Link></li>
+                        <li><Link to="#"><img src="img/instagram.png" alt="instagram" /></Link></li>
+                        <li><Link to="#"><img src="img/twitter.png" alt="twitter" /></Link></li>
+                        <li><Link to="#"><img src="img/pinterest.png" alt="pinterest" /></Link></li>
+                        <li><Link to="#"><img src="img/linkedin.png" alt="linkedin" /></Link></li>
+                    </ul>
                 </div>
                 <div className="contactForm">
                     <h2>Send a Message</h2>
