@@ -3,42 +3,43 @@ import "./Header.css";
 
 const Header = () => {
     return (
-        <header id="header">
-            <h1>Bau Bau H<span>ome</span> D<span>elivery</span></h1>
+       
+            <header id="header">
+                <h1>Bau Bau H<span>ome</span> D<span>elivery</span></h1>
 
-            <Link to="/">
-                <input type="image" src="img/vector-cartoon-cute-dogs-with-big-bone_52569-1378.jpg" name="home" alt="Submit" width="300" height="100"></input>
-            </Link>
-            {/* {{#if loggedIn}} */}
-            {/* <h2>Welcome <span>Email</span>!</h2> */}
-            {/* {{/if}} */}
-            <nav id="nav">
-                <ul>
-                    {/* {{#if loggedIn}} */}
-                    {/* <li><a href="#/logout">Sign out</a></li> */}
+                <Link to="/">
+                    <input type="image" src="img/vector-cartoon-cute-dogs-with-big-bone_52569-1378.jpg" name="home" alt="Submit" width="300" height="100"></input>
+                </Link>
+                {/* {{#if loggedIn}} */}
+                {/* <h2>Welcome <span>Email</span>!</h2> */}
+                {/* {{/if}} */}
+                <nav id="nav">
+                    <ul>
+                        {/* {{#if loggedIn}} */}
+                        {/* <li><a href="#/logout">Sign out</a></li> */}
 
-                    {/* {{else}} */}
-                    <li>
-                        <div className="dropdown">
-                            <button className="dropbtn"><Link to="/">Meals</Link>
-                                <i className="fa fa-caret-down"></i>
-                            </button>
-                            <div className="dropdown-content">
-                                <Link to="#">Barkin’ Beef</Link>
-                                <Link to="#">Chompin’ Chicken</Link>
-                                <Link to="#">Tail Waggin’ Turkey</Link>
-                                <Link to="#">Lip Lickin’ Lamb</Link>
+                        {/* {{else}} */}
+                        <li>
+                            <div className="dropdown">
+                                <button className="dropbtn"><Link to="/">Meals</Link>
+                                    <i className="fa fa-caret-down"></i>
+                                </button>
+                                <div className="dropdown-content">
+                                    <Link to="#">Barkin’ Beef</Link>
+                                    <Link to="#">Chompin’ Chicken</Link>
+                                    <Link to="#">Tail Waggin’ Turkey</Link>
+                                    <Link to="#">Lip Lickin’ Lamb</Link>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link to="/login">Sign In</Link></li>
-                    <li><Link to="/register">Start Now</Link></li>
+                        </li>
+                        <li><Link to="/contact">Contact Us</Link></li>
+                        <li><Link to="/signIn">Sign In</Link></li>
+                        <li><Link to="/register">Start Now</Link></li>
 
-                    {/* {{/if}} */}
-                </ul>
-            </nav>
-        </header>
+                        {/* {{/if}} */}
+                    </ul>
+                </nav>
+            </header>
     );
 }
 

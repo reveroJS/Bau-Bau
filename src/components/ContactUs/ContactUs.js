@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import ContactForm from "./ContactForm";
 import "./ContactUs.css";
 
 const ContactUs = () => {
@@ -34,34 +35,7 @@ const ContactUs = () => {
                         <li><Link to="#"><img src="img/linkedin.png" alt="linkedin" /></Link></li>
                     </ul>
                 </div>
-                <div className="contactForm">
-                    <h2>Send a Message</h2>
-                    <div className="formBox">
-                        <div className="inputBox w50">
-                            <input type="text" name="" required />
-                            <span>First Name</span>
-                        </div>
-                        <div className="inputBox w50">
-                            <input type="text" name="" required />
-                            <span>Last Name</span>
-                        </div>
-                        <div className="inputBox w50">
-                            <input type="text" name="" required />
-                            <span>Email Address</span>
-                        </div>
-                        <div className="inputBox w50">
-                            <input type="text" name="" required />
-                            <span>Mobile Number</span>
-                        </div>
-                        <div className="inputBox w100">
-                            <textarea name="" required></textarea>
-                            <span>Write your message here...</span>
-                        </div>
-                        <div className="inputBox w100">
-                            <input type="submit" value="Send" />
-                        </div>
-                    </div>
-                </div>
+                <ContactForm />
             </div>
         </section>
     );
