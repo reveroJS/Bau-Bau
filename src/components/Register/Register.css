@@ -1,45 +1,46 @@
-section .conteiner .signIn {
+section .conteiner .register {
     position: absolute;
     padding: 40px 50px;
     background-color: #fff;
     margin-left: 150px;
-    padding-left: 150px;
-    width: calc(100% - 461px);
-    height: 50%;
+    padding-left: 250px;
+    width: calc(100% - 700px);
+    height: 100%;
     box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
 }
 
-section .conteiner .signIn h2 {
+section .conteiner .register h2 {
     color: #0f3959;
     font-size: 24px;
     font-weight: 500;
     margin: auto;
 }
 
-section .conteiner .signIn .formBox {
+section .conteiner .register .formBox {
     position: relative;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     padding-top:  30px;
     
 }
 
-section .conteiner .signIn .formBox .inputBox {
+section .conteiner .register .formBox .inputBox {
     position: relative;
     margin: 0 0 35px 0;
 }
 
-section .conteiner .signIn .formBox .inputBox.w50 {
+section .conteiner .register .formBox .inputBox.w50 {
     width: 47%;
 }
 
-section .conteiner .signIn .formBox .inputBox.w100 {
+section .conteiner .register .formBox .inputBox.w100 {
     width: 100%;
 }
 
-section .conteiner .signIn .formBox .inputBox input,
-section .conteiner .signIn .formBox .inputBox textarea {
+section .conteiner .register .formBox .inputBox input,
+section .conteiner .register .formBox .inputBox textarea {
     
     width: 100%;
     padding: 5px 0;
@@ -52,12 +53,12 @@ section .conteiner .signIn .formBox .inputBox textarea {
     outline: none;
 }
 
-section .conteiner .signIn .formBox .inputBox textarea {
+section .conteiner .register .formBox .inputBox textarea {
 
     min-height: 120px;
 }
 
-section .conteiner .signIn .formBox .inputBox span {
+section .conteiner .register .formBox .inputBox span {
     position: absolute;
     left: 0;
     padding: 5px 0;
@@ -68,10 +69,10 @@ section .conteiner .signIn .formBox .inputBox span {
     pointer-events: none;
 }
 
-section .conteiner .signIn .formBox .inputBox input:focus ~ span,
-section .conteiner .signIn .formBox .inputBox textarea:focus ~ span,
-section .conteiner .signIn .formBox .inputBox input:valid ~ span,
-section .conteiner .signIn .formBox .inputBox textarea:valid ~ span  {
+section .conteiner .register .formBox .inputBox input:focus ~ span,
+section .conteiner .register .formBox .inputBox textarea:focus ~ span,
+section .conteiner .register .formBox .inputBox input:valid ~ span,
+section .conteiner .register .formBox .inputBox textarea:valid ~ span  {
     transform: translateY(-20px);
     font-size: 12px;
     font-weight: 400;
@@ -79,7 +80,7 @@ section .conteiner .signIn .formBox .inputBox textarea:valid ~ span  {
     color: #ff568c;
 }
 
-section .conteiner .signIn .formBox .inputBox input[type="submit"] {
+section .conteiner .register .formBox .inputBox input[type="submit"] {
     position: relative;
     cursor: pointer;
     background-color: #0f3959;
@@ -89,6 +90,6 @@ section .conteiner .signIn .formBox .inputBox input[type="submit"] {
     padding: 12px;
 }
 
-section .conteiner .signIn .formBox .inputBox input[type="submit"]:hover {
+section .conteiner .register .formBox .inputBox input[type="submit"]:hover {
     background-color: #ff568c;
 }

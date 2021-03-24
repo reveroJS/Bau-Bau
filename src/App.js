@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer"
 import ContactUs from "./components/ContactUs";
 import Login from './components/Login';
+import Register from './components/Register/Register';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route path="/contact" component={ContactUs} />
         <Route path="/Login" component={Login} />
+        <Route path="/register" component={Register} />
       </Switch>
     <Footer />
 
