@@ -1,12 +1,12 @@
-import "./SignIn.css"
+import "./Login.css"
 
-const SignIn = () => {
+const Login = () => {
 
     return (
         <section>
             <div className="conteiner">
                 <div className="signIn">
-                    <h2>Sign In</h2>
+                    <h2>Login</h2>
                     <div className="formBox">
                         <div className="inputBox w50">
                             <input type="text" name="email" required />
@@ -17,7 +17,7 @@ const SignIn = () => {
                             <span>Password</span>
                         </div>
                         <div className="inputBox w100">
-                            <input type="submit" value="Sign In" />
+                            <input type="submit" value="Login" />
                         </div>
                     </div>
                 </div>
@@ -27,4 +27,4 @@ const SignIn = () => {
 
 }
 
-export default SignIn;
+export default Login;

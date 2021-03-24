@@ -1,0 +1,22 @@
+#footer {
+    background: rgb(43, 42, 42);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 10px;
+    /* position: absolute; */
+    width: 98.7%;
+    
+  }
+  
+  #footer h1 {
+    color: #fff;
+    margin: auto;
+  }
+  
+ 
+  #footer h1 span {
+    color: rgba(19, 226, 199, 0.918);
+  }
+
+ 

@@ -13,6 +13,7 @@ section .conteiner .signIn h2 {
     color: #0f3959;
     font-size: 24px;
     font-weight: 500;
+    margin: auto;
 }
 
 section .conteiner .signIn .formBox {
@@ -21,6 +22,7 @@ section .conteiner .signIn .formBox {
     justify-content: space-between;
     flex-wrap: wrap;
     padding-top:  30px;
+    
 }
 
 section .conteiner .signIn .formBox .inputBox {
