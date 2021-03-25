@@ -1,0 +1,49 @@
+
+.conteiner-meals {
+    position: relative;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.conteiner-meals .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.conteiner-meals .card:nth-child(even) {
+    flex-direction: column-reverse;
+
+}
+
+.conteiner-meals .card .imgBox {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #000;
+}
+
+.conteiner-meals .card .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteiner-meals .card .content {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner-meals .card .content div {
+     padding: 20px;
+     text-align: center;
+}

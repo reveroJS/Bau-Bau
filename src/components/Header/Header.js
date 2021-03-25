@@ -21,7 +21,7 @@ const Header = () => {
                         {/* {{else}} */}
                         <li>
                             <div className="dropdown">
-                                <button className="dropbtn"><Link to="/">Meals</Link>
+                                <button className="dropbtn"><Link to="/meals">Meals</Link>
                                     <i className="fa fa-caret-down"></i>
                                 </button>
                                 <div className="dropdown-content">
