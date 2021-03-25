@@ -1,0 +1,43 @@
+
+#guestHome {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" ,sans-serif;
+}
+
+#guestHome {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* min-height: 100vh; */
+   height:8482px;
+   background-color: #112d42;
+}
+
+#guestHome::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height:8482px;
+    background-color: #03a9f4;
+}
+
+#guestHome .box {
+   position: absolute;
+   top: 1.7%;
+   left: 5%;
+   transform: translate(-1.5%, -1.5%);
+   background-position: top;
+   /* background-image: url(./public/Human-Food-Your-Dogs-Can-And-Can-Not-Eat.webp); */
+   background-size: 100% 100%;
+   width: 1400px;
+   height:8382px;
+   background-size: cover;
+   border: 10px solid #fff;
+   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+   }
+

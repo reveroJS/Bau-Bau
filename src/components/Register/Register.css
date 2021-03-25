@@ -20,7 +20,6 @@ section .conteiner .register .formBox {
     position: relative;
     display: flex;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     padding-top:  30px;
     
