@@ -44,6 +44,28 @@
 }
 
 .conteiner-meals .card .content div {
-     padding: 20px;
+     padding: 2px;
      text-align: center;
+}
+
+.conteiner-meals .card .content p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;  /* Number of lines displayed before it truncate */
+         overflow: hidden;
+}
+
+.conteiner-meals .card .content .buyButton {
+    position: relative;
+    cursor: pointer;
+    background-color: #0f3959;
+    color: #fff;
+    border: none;
+    max-width: 150px;
+    padding: 9px;
+    
+}
+
+.conteiner-meals .card .content .buyButton:hover {
+    background-color: #ff568c;
 }
