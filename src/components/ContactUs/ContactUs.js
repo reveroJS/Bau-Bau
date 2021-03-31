@@ -12,17 +12,17 @@ const ContactUs = () => {
                         <h2>Contact Info</h2>
                         <ul className="info">
                             <li>
-                                <span><img src="img/location.png" /></span>
+                                <span><img src="img/location.png" alt="location.png" /></span>
                                 <span>5 Carlyle Rd<br />
                                     Birmingham B16 9BH<br />
                                     England</span>
                             </li>
                             <li>
-                                <span><img src="img/email.png" /></span>
+                                <span><img src="img/email.png" alt="email.png"/></span>
                                 <span>lorem@ipsum.com</span>
                             </li>
                             <li>
-                                <span><img src="img/call.png" /></span>
+                                <span><img src="img/call.png" alt="call.png"/></span>
                                 <span>310-386-1623</span>
                             </li>
                         </ul>

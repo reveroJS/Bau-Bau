@@ -18,7 +18,7 @@ const MealCard = ({
                 <div>
                     <h2>{name}</h2>
                     <p>{description}</p>
-                    <Link className="buyButton" to="/">See More</Link>
+                    <Link className="buyButton" to={`/meals/detail/${id}`} >See More</Link>
                 </div>
             </div>
         </div>
