@@ -1,6 +1,5 @@
 
 import './App.css';
-import React, {useEffect, useState} from "react";
 import { Route, Switch } from "react-router-dom";
 
 
@@ -12,9 +11,10 @@ import Register from './components/Register';
 import Home from './components/Home';
 import Meals from './components/Meals';
 import Detail from './components/Detail';
-import loadingScreen from "./components/Loading";
+
 
 function App() {
+
   return (
     <div className="App">
       <Header />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
       </Switch>
-    <Footer />
+      <Footer />
 
     </div>
   );
