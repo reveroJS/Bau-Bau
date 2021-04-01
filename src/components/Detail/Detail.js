@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom"
 import React, { useEffect, useState } from "react";
-import { db } from "../../services/firebase";
 import RiseLoader from "react-spinners/RiseLoader";
 
+import { db } from "../../services/firebase";
 import "./Detail.css";
-
 
 const Detail = ({
     match
@@ -14,12 +14,10 @@ const Detail = ({
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-
         db.collection('meals')
             .doc(productId)
             .get()
             .then((res) => {
-
                 setProduct(res.data())
             })
         setTimeout(() => setLoading(false), 2000)
@@ -41,19 +39,19 @@ const Detail = ({
                                     </div>
                                     <div className="img-select">
                                         <div className="img-item">
-                                            <a href="#" data-id="1">
+                                            <Link to="#" data-id="1">
                                                 <img src={product.imageUrl[0]} alt="img" />
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="img-item">
-                                            <a href="#" data-id="2">
+                                            <Link to="#" data-id="2">
                                                 <img src={product.imageUrl[1]} alt="img" />
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="img-item">
-                                            <a href="#" data-id="3">
+                                            <Link to="#" data-id="3">
                                                 <img src={product.imageUrl[2]} alt="img" />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -68,15 +66,14 @@ const Detail = ({
                                     </div>
                                     <div className="purchase-info">
                                         <input type="number" min="0" value="1" />
-                                        <button type="" className="btn">Add to Cart</button>
-                                        <button type="" className="btn">Buy Now</button>
+                                        <Link type="" className="btn">Add to Cart</Link>
+                                        <Link type="" className="btn">Buy Now</Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                ) :
-                (
+                ) : (
                     <section>
                         <h1 style={{position:"relative"}}>LOADING...</h1>
                         <RiseLoader

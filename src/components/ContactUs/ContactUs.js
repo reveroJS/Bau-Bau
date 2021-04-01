@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import ContactForm from "./ContactForm";
 import "./ContactUs.css";
 
-const ContactUs = () => {
+const ContactUs = (prop) => {
 
     return (
         <section>
@@ -35,7 +35,7 @@ const ContactUs = () => {
                         <li><Link to="#"><img src="img/linkedin.png" alt="linkedin" /></Link></li>
                     </ul>
                 </div>
-                <ContactForm />
+                <ContactForm {...prop}/>
             </div>
         </section>
     );
