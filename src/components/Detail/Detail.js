@@ -65,9 +65,9 @@ const Detail = ({
                                         <p>{product.description}</p>
                                     </div>
                                     <div className="purchase-info">
-                                        <input type="number" min="0" value="1" />
-                                        <Link type="" className="btn">Add to Cart</Link>
-                                        <Link type="" className="btn">Buy Now</Link>
+                                        <input type="number" min="0" value="1"/>
+                                        <Link to="#" className="btn">Add to Cart</Link>
+                                        <Link to={`/meals/detail/${product.id}/checkout`} className="btn">Buy Now</Link>
                                     </div>
                                 </div>
                             </div>

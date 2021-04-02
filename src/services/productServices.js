@@ -11,7 +11,7 @@ export const createFromContact = (firstName, lastName, email, mobileNumber, mess
     validateServices.emailValidation(email);
     validateServices.phoneValidate(mobileNumber);
 
-    return db.collection("inbox")
+    return db.collection("contactTo")
     .doc()
     .set({
         firstName: firstNameToString,
@@ -23,6 +23,28 @@ export const createFromContact = (firstName, lastName, email, mobileNumber, mess
         
 };
 
+export const createOrder = (name, email, address, city, mobilePhone, orderId, orderNumber) => {
+
+    let nameToString = name.toString();
+    let addressToString = address.toString();
+    let cityToString = city.toString();
+
+    validateServices.emailValidation(email);
+    validateServices.phoneValidate(mobilePhone);
+
+    return db.collection("inbox")
+    .doc()
+    .set({
+        name: nameToString,
+        email,
+        address: addressToString,
+        city: cityToString,
+        mobilePhone,
+        orderId,
+        orderNumber
+    })
+        
+};
 
 
 
