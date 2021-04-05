@@ -1,7 +1,7 @@
 import "./Meals.css";
 import { db } from "../../services/firebase";
 import { useEffect, useState } from "react";
-import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import ClockLoader from "react-spinners/ClockLoader";
 
 import MealCard from "./MealCard";
 
@@ -38,8 +38,8 @@ const Meals = () => {
                 ) : (
                     <section>
                         <h1 style={{ position: "relative" }}>LOADING...</h1>
-                        <ClimbingBoxLoader
-                            size={60}
+                        <ClockLoader
+                            size={100}
                             color={"#F8E71C"}
                             loading={loading}
                         />

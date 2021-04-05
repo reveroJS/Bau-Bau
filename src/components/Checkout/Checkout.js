@@ -26,7 +26,7 @@ const Checkout = ({
             orderNumber
             )
             .then(() => {
-
+                alert(`Your order was submit\nYour order number is ${orderNumber}`)
                 console.log("Document successfully written!");
                 history.push("/meals")
             })
@@ -45,7 +45,7 @@ const Checkout = ({
             <form onSubmit={onOrderSubmitHandler}>
                 <div className="conteiner">
                     <div className="register">
-                        <h2>Checkout</h2>
+                        <h2>Place my order</h2>
                         <div className="formBox">
                             <div className="inputBox w50">
                                 <input type="text" name="name" required />

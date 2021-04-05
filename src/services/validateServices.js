@@ -8,7 +8,7 @@ export const emailValidation = (email) => {
 
     } else {
 
-        throw new Error("Invalid Email")
+        return alert("Invalid Email")
     }
 }
 
@@ -19,6 +19,6 @@ export const phoneValidate = (inputtxt) => {
         return true;
     }
     else {
-        throw new Error("Not a valid Phone Number\nPhone must be: 087xxxxxxx, 088xxxxxxx, 089xxxxxxx")
+        return alert("Not a valid Phone Number\nPhone must be: 087xxxxxxx, 088xxxxxxx, 089xxxxxxx")
     }
 }
