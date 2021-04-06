@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
 import "./Header.css";
+import UserAccount from "../UserAccount";
 
 const Header = () => {
     return (
-       
+        <>
+            
             <header id="header">
+            <UserAccount />
                 <h1>Bau Bau H<span>ome</span> D<span>elivery</span></h1>
 
                 <Link to="/">
@@ -13,12 +17,14 @@ const Header = () => {
                 {/* {{#if loggedIn}} */}
                 {/* <h2>Welcome <span>Email</span>!</h2> */}
                 {/* {{/if}} */}
+               
                 <nav id="nav">
                     <ul>
                         {/* {{#if loggedIn}} */}
                         {/* <li><a href="#/logout">Sign out</a></li> */}
 
                         {/* {{else}} */}
+
                         <li>
                             <div className="dropdown">
                                 <button className="dropbtn"><Link to="/meals">Meals</Link>
@@ -40,6 +46,7 @@ const Header = () => {
                     </ul>
                 </nav>
             </header>
+        </>
     );
 }
 
@@ -76,6 +83,6 @@ export default Header;
     <li><a>Sign In</a></li>
     <li><a>Sign Out</a></li>
     <li><a>Start Now</a></li>
-    
+
 </ul>
 </nav> }*/

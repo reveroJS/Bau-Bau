@@ -37,7 +37,7 @@ const Login = ({ history }) => {
                                 <span>Email</span>
                             </div>
                             <div className="inputBox w50">
-                                <input type="text" name="password" required />
+                                <input type="password" name="password" required />
                                 <span>Password</span>
                             </div>
                             <div className="inputBox w100">

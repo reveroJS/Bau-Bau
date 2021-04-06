@@ -1,6 +1,7 @@
+/* flex */
 #header {
     background: #163490da;
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 15px 10px;
@@ -38,12 +39,12 @@
     padding: 10px 20px;
   }
   
-  #header h2 {
+  #header #nav h2 {
     color: #fff;
     font-weight: 550;
   }
   
-  #header h2 span {
+  #header #nav h2 span {
     color: rgba(19, 226, 199, 0.918);
   }
 
