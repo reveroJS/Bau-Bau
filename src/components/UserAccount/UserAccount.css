@@ -5,19 +5,21 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-}
+} */
 
-body{
+/* body{
     background: #ffccbc;
 } */
 
 .action {
+    position: sticky;
     top: 20px;
     right: 300px;
 }
 
 .action .profile {
     position: absolute;
+    left: -75px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -27,8 +29,8 @@ body{
 
 .action .profile img {
     position: absolute;
+    /* z-index: 1; */
     top: 0;
-    z-index: 1;
     left: 0;
     width: 100%;
     height: 100%;

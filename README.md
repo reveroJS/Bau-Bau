@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Project Description
+
+Bau Bau Home Delivery is a commercial website, designed to give people the opportunity to order fresh, home-cooked meals for their doggies. On the Homepage you can find a very detailed description about foods and products which are recommended for them, including the ones which are not suggested or definitely should have not been given to our fluffy friends.  If you do not want to register as a user and just would like to place an order, you can simply click on the Meals button and pick whichever dish you would like to order.  Once you selected the desired dish, you can choose how many portions you would like and then just place your order with filling out a few essential details.  When you have completed that, you will receive your unique order number.  As a registered user when you are placing an order your details will automatically pull through, so you do not need to insert them again...
