@@ -1,5 +1,6 @@
 import "./UserAccount.css";
 import React, { Component } from "react"
+import { Link } from "react-router-dom"
 
 
 class UserAccount extends Component {
@@ -30,22 +31,21 @@ class UserAccount extends Component {
     render() {
 
         return (
-                <div className="action" >
-                    <div className="profile" onClick={this.focusTextInput}>
-                        <img src="/userImg/pexels-tran-huynh-nam-3134555.jpg" />
-                    </div>
-                    <div className="menu" ref={this.textInput}>
-                        <h3>Someone Famous</h3>
-                        <ul>
-                            <li><img src="/userImg/user.png" /><a href="#">My Profile</a></li>
-                            <li><img src="/userImg/edit.png" /><a href="">Edit Profile</a></li>
-                            <li><img src="/userImg/envelope.png" /><a href="">Inbox</a></li>
-                            <li><img src="/userImg/settings.png" /><a href="">Settings</a></li>
-                            <li><img src="/userImg/question.png" /><a href="">Help</a></li>
-                            <li><img src="/userImg/log-out.png" /><a href="#">Logout</a></li>
-                        </ul>
-                    </div>
+            <div className="action" >
+                <div className="profile" onClick={this.focusTextInput}>
+                    <img src="/userImg/pexels-tran-huynh-nam-3134555.jpg" />
                 </div>
+                <div className="menu" ref={this.textInput}>
+                    <h3>{this.props.email}</h3>
+                    <ul>
+                        <li><img src="/userImg/user.png" /><Link to="/profile">My Profile</Link></li>
+                        <li><img src="/userImg/edit.png" /><Link to="">Edit Profile</Link></li>
+                        <li><img src="/userImg/settings.png" /><Link to="">Settings</Link></li>
+                        <li><img src="/userImg/question.png" /><Link to="">Help</Link></li>
+                        <li><img src="/userImg/log-out.png" /><Link to="#">Logout</Link></li>
+                    </ul>
+                </div>
+            </div>
         );
     }
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../../services/firebase";
 
 const Login = ({ history }) => {
+    
 
     const onLoginSubmitHandler = (e) => {
         e.preventDefault();
@@ -15,6 +16,7 @@ const Login = ({ history }) => {
             .then((userCredential) => {
                 // Signed in
                 var user = userCredential.user;
+
                 history.push("/");
                 // ...
             })

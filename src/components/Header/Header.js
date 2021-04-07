@@ -1,30 +1,51 @@
 import { Link } from "react-router-dom";
+import { auth } from "../../services/firebase";
+import { useEffect, useState } from "react";
+
 
 import "./Header.css";
 import UserAccount from "../UserAccount";
 
 const Header = () => {
+
+    const [isLogged, setIsLogged] = useState(false);
+    const [email, setEmail] = useState({});
+
+    useEffect(() => {
+
+        auth.onAuthStateChanged(function (user) {
+            if (user) {
+                setEmail(user.email)
+                setIsLogged(true)
+
+            } else {
+
+                setIsLogged(false)
+            }
+        });
+    }, [setIsLogged])
+
+
     return (
         <>
-            
+
             <header id="header">
-            <UserAccount />
                 <h1>Bau Bau H<span>ome</span> D<span>elivery</span></h1>
+                <>
+                    {isLogged === true ? (
+                        <UserAccount email={email} />
+                    ) : (false)}
+                </>
 
                 <Link to="/">
                     <input type="image" src="/img/vector-cartoon-cute-dogs-with-big-bone_52569-1378.jpg" name="home" alt="homeButton" width="300" height="100"></input>
                 </Link>
-                {/* {{#if loggedIn}} */}
-                {/* <h2>Welcome <span>Email</span>!</h2> */}
-                {/* {{/if}} */}
-               
+
+                {/* <h2>Welcome <span>{email}</span>!</h2>  */}
+
+
                 <nav id="nav">
                     <ul>
-                        {/* {{#if loggedIn}} */}
-                        {/* <li><a href="#/logout">Sign out</a></li> */}
-
-                        {/* {{else}} */}
-
                         <li>
                             <div className="dropdown">
                                 <button className="dropbtn"><Link to="/meals">Meals</Link>
@@ -39,10 +60,23 @@ const Header = () => {
                             </div>
                         </li>
                         <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                        <li><Link to="/register">Register</Link></li>
 
-                        {/* {{/if}} */}
+                        {isLogged === true ?
+                            (
+                                <>
+                                    <li><Link to="/logout">Sign out</Link></li>
+                                </>
+                            ) : (
+                                <>
+                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to="/register">Register</Link></li>
+                                </>
+                            )}
+
+
+
+
+
                     </ul>
                 </nav>
             </header>
