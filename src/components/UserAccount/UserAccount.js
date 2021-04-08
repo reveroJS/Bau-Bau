@@ -33,7 +33,7 @@ class UserAccount extends Component {
         return (
             <div className="action" >
                 <div className="profile" onClick={this.focusTextInput}>
-                    <img src="/userImg/pexels-tran-huynh-nam-3134555.jpg" />
+                    <img src="/userImg/hurby.jpg" />
                 </div>
                 <div className="menu" ref={this.textInput}>
                     <h3>{this.props.email}</h3>

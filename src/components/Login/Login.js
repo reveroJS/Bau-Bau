@@ -9,6 +9,7 @@ const Login = ({ history }) => {
         e.preventDefault();
 
         const [email, password] = e.target;
+        
         let emalToString = email.value.toString();
         let passwordToString = password.value.toString();
 
@@ -16,13 +17,14 @@ const Login = ({ history }) => {
             .then((userCredential) => {
                 // Signed in
                 var user = userCredential.user;
-
+               
                 history.push("/");
                 // ...
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
+                
                return alert(error.message);
             });
     }

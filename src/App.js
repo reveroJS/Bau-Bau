@@ -12,6 +12,7 @@ import Home from './components/Home';
 import Meals from './components/Meals';
 import Detail from './components/Detail';
 import Checkout from "./components/Checkout";
+import MyProfile from './components/UserAccount/MyProfile';
 import * as firebase from "./services/firebase";
 
 
@@ -22,6 +23,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/profile" component={MyProfile} />
           <Route path="/meals" exact component={Meals} />
           <Route path="/meals/detail/:productId" exact component={Detail} />
           <Route path="/meals/detail/:productId/checkout" component={Checkout} />
