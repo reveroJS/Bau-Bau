@@ -1,8 +1,38 @@
 import "./MyProfile.css";
 import { Link } from "react-router-dom";
+import MyOrders from "./MyOrders";
+
+import { db } from "../../services/firebase";
+import { useEffect, useState } from "react";
+import ClockLoader from "react-spinners/ClockLoader";
+
 
 const MyProfile = (props) => {
-    console.log(props)
+
+    let userEmail = localStorage.key(0);
+
+    const [loading, setLoading] = useState(true);
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        db.collection('inbox')
+            .get()
+            .then((res) => {
+                let orders = []
+                
+                res.forEach((doc) => {
+                    
+                    let data = doc.data()
+                    if(userEmail == data.creator){
+                        orders.push(data)
+                    }
+                    
+                })
+                setOrders(orders)
+                console.log(orders[0].creator)
+            })
+        setTimeout(() => setLoading(false), 2000)
+    }, [])
 
     return (
         <section>
@@ -26,7 +56,7 @@ const MyProfile = (props) => {
                             <div className="info_data">
                                 <div className="data">
                                     <h4>Email</h4>
-                                    <p>alex@gmail.com</p>
+                                    <p>{userEmail}</p>
                                 </div>
                                 <div className="data">
                                     <h4>Phone</h4>
@@ -38,15 +68,7 @@ const MyProfile = (props) => {
                         <div className="orders">
                             <h3>My Orders</h3>
                             <div className="orders_data">
-                                <div className="data">
-                                    <h4>Beef</h4>
-                                    <h5>Order Number: 3333</h5>
-                                    <p>Lorem ipsum dolor sit amet.</p>
-                                </div>
-                                <div className="data">
-                                    <h4>Turkey</h4>
-                                    <p>Lorem ipsum dolor sit amet.</p>
-                                </div>
+                               {orders.map((x) => <MyOrders key={x.id} {...x} />)} 
                             </div>
                         </div>
 

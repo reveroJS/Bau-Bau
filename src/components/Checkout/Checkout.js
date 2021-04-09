@@ -13,8 +13,18 @@ const Checkout = ({
 
         const [name, email, address, city, mobilePhone] = e.target;
         const productId = match.params.productId;
+        const productName = match.params.productName;
         let orderNumber = Math.floor((Math.random() * 9999) + 999);
+        let user = localStorage.key(0)
+        let creator;
 
+        if(user) {
+            creator = user;
+        } else {
+            creator = "Guest"
+        }
+
+        console.log(user)
 
         productServices.createOrder(
             name.value,
@@ -23,7 +33,9 @@ const Checkout = ({
             city.value,
             mobilePhone.value,
             productId,
-            orderNumber
+            orderNumber,
+            creator,
+            productName
             )
             .then(() => {
                 alert(`Your order was submit\nYour order number is ${orderNumber}`)

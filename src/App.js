@@ -12,7 +12,7 @@ import Home from './components/Home';
 import Meals from './components/Meals';
 import Detail from './components/Detail';
 import Checkout from "./components/Checkout";
-import MyProfile from './components/UserAccount/MyProfile';
+import MyProfile from './components/MyProfile';
 import * as firebase from "./services/firebase";
 
 
@@ -26,12 +26,14 @@ function App() {
           <Route path="/profile" component={MyProfile} />
           <Route path="/meals" exact component={Meals} />
           <Route path="/meals/detail/:productId" exact component={Detail} />
-          <Route path="/meals/detail/:productId/checkout" component={Checkout} />
+          <Route path="/meals/detail/:productId/:productName/checkout" component={Checkout} />
           <Route path="/contact" component={ContactUs} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/logout" render={props => {
             firebase.auth.signOut();
+            let keyName = localStorage.key(0);
+            localStorage.removeItem(keyName);
             return <Redirect to="/" />
           }} />
         </Switch>

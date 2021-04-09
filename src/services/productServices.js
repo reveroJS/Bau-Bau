@@ -23,7 +23,7 @@ export const createFromContact = (firstName, lastName, email, mobileNumber, mess
         
 };
 
-export const createOrder = (name, email, address, city, mobilePhone, orderId, orderNumber) => {
+export const createOrder = (name, email, address, city, mobilePhone, orderId, orderNumber, creator, productName) => {
 
     let nameToString = name.toString();
     let addressToString = address.toString();
@@ -41,7 +41,9 @@ export const createOrder = (name, email, address, city, mobilePhone, orderId, or
         city: cityToString,
         mobilePhone,
         orderId,
-        orderNumber
+        orderNumber,
+        creator,
+        productName
     })
         
 };

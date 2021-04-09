@@ -41,8 +41,8 @@ class UserAccount extends Component {
                         <li><img src="/userImg/user.png" /><Link to="/profile">My Profile</Link></li>
                         <li><img src="/userImg/edit.png" /><Link to="">Edit Profile</Link></li>
                         <li><img src="/userImg/settings.png" /><Link to="">Settings</Link></li>
-                        <li><img src="/userImg/question.png" /><Link to="">Help</Link></li>
-                        <li><img src="/userImg/log-out.png" /><Link to="#">Logout</Link></li>
+                        <li><img src="/userImg/question.png" /><Link to="/contact">Help</Link></li>
+                        <li><img src="/userImg/log-out.png" /><Link to="/logout">Logout</Link></li>
                     </ul>
                 </div>
             </div>

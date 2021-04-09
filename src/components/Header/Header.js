@@ -15,8 +15,10 @@ const Header = () => {
 
         auth.onAuthStateChanged(function (user) {
             if (user) {
+            
                 setEmail(user.email)
                 setIsLogged(true)
+                localStorage.setItem(`${user.email}`, `${user.uid}`)
 
             } else {
 
