@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import React, { useEffect, useState } from "react";
-import RiseLoader from "react-spinners/RiseLoader";
 
+import * as productServices from "../../services/productServices";
 import { db } from "../../services/firebase";
 import "./Detail.css";
 
@@ -74,19 +74,11 @@ const Detail = ({
                         </div>
                     </section>
                 ) : (
-                    <section>
-                        <h1 style={{position:"relative"}}>LOADING...</h1>
-                        <RiseLoader
-                            size={100}
-                            color={"#F8E71C"}
-                            loading={loading}
-                        />
-                    </section>
+                    productServices.loadingEffect(loading, "RiseLoader")
                 )}
         </>
     );
 }
-
 export default Detail;
 
 

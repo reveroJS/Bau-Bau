@@ -94,3 +94,13 @@
 .wrapper-profile .left .sci li:hover a img {
     opacity: 1;
 }
+
+.myProfile .wrapper-profile .right .orders .orders_data a {
+    color: #fff;
+}
+
+.myProfile .wrapper-profile .right .orders .orders_data a:hover {
+    background-color: #ff568c;
+    color: #212121;
+    padding: 10px 20px;
+}

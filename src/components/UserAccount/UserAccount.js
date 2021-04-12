@@ -9,15 +9,13 @@ class UserAccount extends Component {
 
         this.textInput = React.createRef();
         this.focusTextInput = this.focusTextInput.bind(this);
-
     }
 
     focusTextInput() {
 
         this.textInput.current.focus();
 
-
-        if (this.textInput.current.className == "active") {
+        if (this.textInput.current.className === "active") {
             this.textInput.current.className = "menu"
         } else {
             this.textInput.current.className = "active"
@@ -26,29 +24,25 @@ class UserAccount extends Component {
 
     }
 
-
-
     render() {
 
         return (
             <div className="action" >
                 <div className="profile" onClick={this.focusTextInput}>
-                    <img src="/userImg/hurby.jpg" />
+                    <img src="/userImg/hurby.jpg" alt="hurby.jpg" />
                 </div>
                 <div className="menu" ref={this.textInput}>
                     <h3>{this.props.email}</h3>
                     <ul>
-                        <li><img src="/userImg/user.png" /><Link to="/profile">My Profile</Link></li>
-                        <li><img src="/userImg/edit.png" /><Link to="">Edit Profile</Link></li>
-                        <li><img src="/userImg/settings.png" /><Link to="">Settings</Link></li>
-                        <li><img src="/userImg/question.png" /><Link to="/contact">Help</Link></li>
-                        <li><img src="/userImg/log-out.png" /><Link to="/logout">Logout</Link></li>
+                        <li><img src="/userImg/user.png" alt="user.png" /><Link to="/profile">My Profile</Link></li>
+                        <li><img src="/userImg/edit.png" alt="edit.png" /><Link to="">Edit Profile</Link></li>
+                        <li><img src="/userImg/settings.png" alt="settings.png" /><Link to="">Settings</Link></li>
+                        <li><img src="/userImg/question.png" alt="question.png" /><Link to="/contact">Help</Link></li>
+                        <li><img src="/userImg/log-out.png" alt="log-out.png" /><Link to="/logout">Logout</Link></li>
                     </ul>
                 </div>
             </div>
         );
     }
 }
-
-
 export default UserAccount;

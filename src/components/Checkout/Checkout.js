@@ -7,50 +7,22 @@ const Checkout = ({
     match,
     history
 }) => {
-    console.log(Math.floor((Math.random() * 9999) + 999))
+    
     const onOrderSubmitHandler = (e) => {
         e.preventDefault();
 
         const [name, email, address, city, mobilePhone] = e.target;
-        const productId = match.params.productId;
-        const productName = match.params.productName;
-        let orderNumber = Math.floor((Math.random() * 9999) + 999);
-        let user = localStorage.key(0)
-        let creator;
-
-        if(user) {
-            creator = user;
-        } else {
-            creator = "Guest"
-        }
-
-        console.log(user)
-
+ 
         productServices.createOrder(
             name.value,
             email.value,
             address.value,
             city.value,
             mobilePhone.value,
-            productId,
-            orderNumber,
-            creator,
-            productName
+            match,
+            history
             )
-            .then(() => {
-                alert(`Your order was submit\nYour order number is ${orderNumber}`)
-                console.log("Document successfully written!");
-                history.push("/meals")
-            })
-
-            .catch((error) => {
-                console.error("Error writing document: ", error);
-            });
-
     }
-
-
-
 
     return (
         <section>
@@ -89,5 +61,4 @@ const Checkout = ({
         </section>
     );
 }
-
 export default Checkout;

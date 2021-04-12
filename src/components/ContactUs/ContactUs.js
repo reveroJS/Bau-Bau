@@ -39,7 +39,5 @@ const ContactUs = (prop) => {
             </div>
         </section>
     );
-
 }
-
 export default ContactUs;

@@ -12,19 +12,9 @@ const ContactForm = ({ history }) => {
             lastName.value,
             email.value,
             mobileNumber.value,
-            message.value
+            message.value,
+            history
         )
-            .then(() => {
-
-                console.log("Document successfully written!");
-                history.push("/meals")
-            })
-
-            .catch((error) => {
-                console.error("Error writing document: ", error);
-            });
-
-
     }
 
     return (
@@ -59,7 +49,5 @@ const ContactForm = ({ history }) => {
             </div>
         </form>
     );
-
 }
-
 export default ContactForm;

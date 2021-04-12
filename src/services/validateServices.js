@@ -1,7 +1,7 @@
 
 export const emailValidation = (email) => {
 
-    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gm;
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gm;
 
     if(email.match(emailRegex)) {
         return true;
@@ -14,8 +14,8 @@ export const emailValidation = (email) => {
 
 export const phoneValidate = (inputtxt) => {
 
-    var phoneno = /08[789]\d{7}/;
-    if (inputtxt.match(phoneno)) {
+    var phone = /08[789]\d{7}/;
+    if (inputtxt.match(phone)) {
         return true;
     }
     else {

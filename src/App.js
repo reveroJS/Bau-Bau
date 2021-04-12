@@ -13,8 +13,10 @@ import Meals from './components/Meals';
 import Detail from './components/Detail';
 import Checkout from "./components/Checkout";
 import MyProfile from './components/MyProfile';
+import Inbox from "./components/Inbox";
 import * as firebase from "./services/firebase";
 
+console.log(localStorage.key(0))
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
           <Route path="/contact" component={ContactUs} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          {/* <Route paht="/inbox" exact component={Inbox} /> */}
           <Route path="/logout" render={props => {
             firebase.auth.signOut();
             let keyName = localStorage.key(0);

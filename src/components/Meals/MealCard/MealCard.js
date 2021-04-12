@@ -1,7 +1,6 @@
 import "./MealCard.css";
 import { Link } from "react-router-dom";
 
-
 const MealCard = ({
     id,
     name,
@@ -23,10 +22,5 @@ const MealCard = ({
             </div>
         </div>
     );
-
-
-
 }
-
-
 export default MealCard;

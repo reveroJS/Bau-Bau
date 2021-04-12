@@ -1,32 +1,16 @@
 import "./Login.css"
 import { Link } from "react-router-dom";
-import { auth } from "../../services/firebase";
+
+import * as productServices from "../../services/productServices";
 
 const Login = ({ history }) => {
     
-
+    
     const onLoginSubmitHandler = (e) => {
         e.preventDefault();
 
         const [email, password] = e.target;
-        
-        let emalToString = email.value.toString();
-        let passwordToString = password.value.toString();
-
-        auth.signInWithEmailAndPassword(emalToString, passwordToString)
-            .then((userCredential) => {
-                // Signed in
-                var user = userCredential.user;
-               
-                history.push("/");
-                // ...
-            })
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                
-               return alert(error.message);
-            });
+        productServices.login(email, password, history);
     }
 
     return (
@@ -56,7 +40,5 @@ const Login = ({ history }) => {
             </form>
         </section>
     );
-
 }
-
 export default Login;

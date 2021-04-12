@@ -70,24 +70,24 @@
     transform: rotate(45deg)
 }
 
-.action .menu h3 {
+.action .active h3 {
     width: 100%;
     text-align: center;
     font-size: 18px;
     padding: 20px 0;
     font-weight: 500;
     font-size: 18px;
-    color: #555;
+    color: #fff;
     line-height: 1.2em;
 }
 
-.action .menu h3 span {
+.action .active h3 span {
     font-size: 14px;
     color: #cecece;
     font-weight: 400;
 }
 
-.action .menu ul li {
+.action .active ul li {
     list-style: none;
     padding: 10px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -95,29 +95,29 @@
     align-items: center;
 }
 
-.action .menu ul li img {
+.action .active ul li img {
     max-width: 20px;
     margin-right: 10px;
     opacity: 0.5;
     transition: 0.5s;
 }
 
-.action .menu ul li:hover img {
+.action .active ul li:hover img {
     opacity: 1;
 }
 
-.action .menu ul li a {
+.action .active ul li a {
     display: inline-block;
     text-decoration: none;
-    color: #555;
+    color: #fff;
     font-weight: 500;
     transition: 0.5s;
 }
 
-.action .menu ul li:hover a {
-    color: #ff5d94;
+ .action .active ul li:hover a:hover {
+    background-color: #ff568c;
+    color: #212121;
 }
-
 
 
 

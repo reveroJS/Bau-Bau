@@ -1,17 +1,14 @@
 import "./MyProfile.css";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import MyOrders from "./MyOrders";
 
 import { db } from "../../services/firebase";
-import { useEffect, useState } from "react";
-import ClockLoader from "react-spinners/ClockLoader";
+import MyOrders from "./MyOrders";
 
 
 const MyProfile = (props) => {
 
     let userEmail = localStorage.key(0);
-
-    const [loading, setLoading] = useState(true);
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
@@ -19,20 +16,17 @@ const MyProfile = (props) => {
             .get()
             .then((res) => {
                 let orders = []
-                
+
                 res.forEach((doc) => {
-                    
+
                     let data = doc.data()
-                    if(userEmail == data.creator){
+                    if (userEmail === data.creator) {
                         orders.push(data)
                     }
-                    
                 })
                 setOrders(orders)
-                console.log(orders[0].creator)
             })
-        setTimeout(() => setLoading(false), 2000)
-    }, [])
+    },)
 
     return (
         <section>
@@ -50,7 +44,6 @@ const MyProfile = (props) => {
                         </ul>
                     </div>
                     <div className="right">
-
                         <div className="info">
                             <h3>Information</h3>
                             <div className="info_data">
@@ -64,22 +57,23 @@ const MyProfile = (props) => {
                                 </div>
                             </div>
                         </div>
-
                         <div className="orders">
                             <h3>My Orders</h3>
                             <div className="orders_data">
-                               {orders.map((x) => <MyOrders key={x.id} {...x} />)} 
+                                
+                                {orders.map((x) => <MyOrders  key={x.orderNumber} {...x} />)}
+                                {!orders.length > 0 ? (
+                                    <>
+                                        <h1>You have no placed order to display</h1>
+                                        <h2>Checkout the <Link to="/meals">menu</Link></h2>
+                                    </>
+                                ) : (null)}
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
     );
-
-
 }
-
-
 export default MyProfile;

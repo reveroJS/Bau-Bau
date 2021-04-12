@@ -1,10 +1,9 @@
 import "./Meals.css";
 import { db } from "../../services/firebase";
 import { useEffect, useState } from "react";
-import ClockLoader from "react-spinners/ClockLoader";
 
+import * as productServices from "../../services/productServices";
 import MealCard from "./MealCard";
-
 
 const Meals = () => {
 
@@ -25,7 +24,6 @@ const Meals = () => {
         setTimeout(() => setLoading(false), 2000)
     }, [])
 
-
     return (
         <>
             {loading === false ?
@@ -36,17 +34,9 @@ const Meals = () => {
                         </div>
                     </section>
                 ) : (
-                    <section>
-                        <h1 style={{ position: "relative" }}>LOADING...</h1>
-                        <ClockLoader
-                            size={100}
-                            color={"#F8E71C"}
-                            loading={loading}
-                        />
-                    </section>
+                    productServices.loadingEffect(loading, "ClockLoader")
                 )}
         </>
     );
 }
-
 export default Meals;
