@@ -14,6 +14,7 @@ import Meals from './components/Meals';
 import Detail from './components/Detail';
 import Checkout from "./components/Checkout";
 import MyProfile from './components/MyProfile';
+import PageNotFound from "./components/404";
 // import Inbox from "./components/Inbox";
 import * as firebase from "./services/firebase";
 
@@ -56,7 +57,10 @@ function App() {
               return <Redirect to="/" />
             }} />
           </>
-        ) : (false)}
+        ) : (
+          <PageNotFound />
+        )}
+        <Route path="*" component={PageNotFound} />
       </Switch>
       <Footer />
     </div>
