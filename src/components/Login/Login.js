@@ -11,6 +11,7 @@ const Login = ({ history }) => {
 
         const [email, password] = e.target;
         productServices.login(email, password, history);
+       
     }
 
     return (

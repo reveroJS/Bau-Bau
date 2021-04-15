@@ -28,7 +28,7 @@ export const createFromContact = (firstName, lastName, email, mobileNumber, mess
             history.push("/meals")
         })
         .catch((error) => {
-            console.error("Error writing document: ", error);
+            return alert("Error writing document: ", error.message);
         });
 
 };
@@ -74,7 +74,7 @@ export const createOrder = (name, email, address, city, mobilePhone, match, hist
         })
 
         .catch((error) => {
-            console.error("Error writing document: ", error);
+            return alert("Error writing document: ", error.message);
         });
 };
 
@@ -85,7 +85,7 @@ export const login = (email, password, history) => {
 
     auth.signInWithEmailAndPassword(emalToString, passwordToString)
         .then((userCredential) => {
-    
+
             history.push("/");
         })
         .catch((error) => {
@@ -106,7 +106,7 @@ export const register = (email, password, confirmPassword, history) => {
 
     auth.createUserWithEmailAndPassword(emalToString, passwordToString)
         .then((userCredential) => {
-            
+
             history.push("/");
         })
         .catch((error) => {
@@ -141,7 +141,4 @@ export const loadingEffect = (loading, effectName) => {
             </section>
         )
     }
-
-
-
-} 
+}

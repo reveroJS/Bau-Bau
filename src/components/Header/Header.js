@@ -2,16 +2,15 @@ import { Link } from "react-router-dom";
 import { auth } from "../../services/firebase";
 import { useEffect, useState } from "react";
 
-
 import "./Header.css";
 import UserAccount from "../UserAccount";
 
 
 const Header = () => {
-    let employees = ["revero_@abv.bg"]
+    // let employees = ["revero_@abv.bg"]
 
     const [isLogged, setIsLogged] = useState(false);
-    const [isEmployee, setEmployee] = useState();
+    // const [isEmployee, setEmployee] = useState();
     const [email, setEmail] = useState({});
 
     useEffect(() => {
@@ -65,11 +64,11 @@ const Header = () => {
                                 </div>
                             </div>
                         </li>
-                        {isEmployee ? (
-                            <li><Link to="/inbox">Inbox</Link></li>
-                        ) : (
-                                <li><Link to="/contact">Contact Us</Link></li>
-                            )}
+
+                        {/* <li><Link to="/inbox">Inbox</Link></li> */}
+
+                        <li><Link to="/contact">Contact Us</Link></li>
+
 
                         {isLogged === true ?
                             (
