@@ -34,7 +34,7 @@ function App() {
     });
   }, [setIsLogged])
 
-  console.log(isLogged)
+
   return (
     <div className="App">
       <Header />
@@ -66,5 +66,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

@@ -11,7 +11,9 @@ export const createFromContact = (firstName, lastName, email, mobileNumber, mess
     let messageToString = message.toString();
 
     validateServices.emailValidation(email);
-    validateServices.phoneValidate(mobileNumber);
+   if(!validateServices.phoneValidate(mobileNumber)) {
+    return alert("Not a valid Phone Number\nPhone must be: 087xxxxxxx, 088xxxxxxx, 089xxxxxxx")
+   }
 
     return db.collection("contactTo")
         .doc()

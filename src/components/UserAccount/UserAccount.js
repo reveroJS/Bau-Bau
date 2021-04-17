@@ -28,7 +28,7 @@ class UserAccount extends Component {
 
         return (
             <div className="action" >
-                <div className="profile" onClick={this.focusTextInput}>
+                <div data-testid="data-testid" className="profile" onClick={this.focusTextInput}>
                     <img src="/userImg/hurby.jpg" alt="hurby.jpg" />
                 </div>
                 <div className="menu" ref={this.textInput}>

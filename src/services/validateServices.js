@@ -19,6 +19,7 @@ export const phoneValidate = (inputtxt) => {
         return true;
     }
     else {
-        return alert("Not a valid Phone Number\nPhone must be: 087xxxxxxx, 088xxxxxxx, 089xxxxxxx")
+        return false
+        // return alert("Not a valid Phone Number\nPhone must be: 087xxxxxxx, 088xxxxxxx, 089xxxxxxx")
     }
 }
