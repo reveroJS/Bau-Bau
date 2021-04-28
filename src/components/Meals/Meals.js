@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import * as productServices from "../../services/productServices";
 import MealCard from "./MealCard";
+import PageNotFound from "../404/";
 
 const Meals = () => {
 
@@ -28,11 +29,17 @@ const Meals = () => {
         <>
             {loading === false ?
                 (
-                    <section>
-                        <div className="conteiner-meals">
-                            {product.map((x) => <MealCard key={x.id} {...x} />)}
-                        </div>
-                    </section>
+                    <>
+                        {product.length > 0 ? (
+                                <section>
+                                    <div className="conteiner-meals">
+                                        {product.map((x) => <MealCard key={x.id} {...x} />)}
+                                    </div>
+                                </section>
+                            ) : (
+                                <PageNotFound />
+                            )}
+                    </>
                 ) : (
                     productServices.loadingEffect(loading, "ClockLoader")
                 )}

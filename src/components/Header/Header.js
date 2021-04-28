@@ -1,46 +1,20 @@
 import { Link } from "react-router-dom";
-import { auth } from "../../services/firebase";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 
 import "./Header.css";
 import UserAccount from "../UserAccount";
+import AuthContext from "../../contexts/AuthContext";
 
 
 const Header = () => {
-    // let employees = ["revero_@abv.bg"]
-
-    const [isLogged, setIsLogged] = useState(false);
-    // const [isEmployee, setEmployee] = useState();
-    const [email, setEmail] = useState({});
-
-    useEffect(() => {
-
-        auth.onAuthStateChanged(function (user) {
-            if (user) {
-
-                setEmail(user.email)
-                setIsLogged(true)
-                localStorage.setItem(`${user.email}`, `${user.uid}`)
-                
-                // if (!employees.indexOf(user.email) >= 0) {
-                //     setEmployee(true)
-                // } else {
-                //     setEmployee(false)
-                // }
-
-            } else {
-                setIsLogged(false)
-            }
-        });
-    }, [setIsLogged])
-
+    const {isAuthenticated, email} = useContext(AuthContext);
 
     return (
         <>
             <header id="header">
                 <h1>Bau Bau H<span>ome</span> D<span>elivery</span></h1>
                 <>
-                    {isLogged === true ? (
+                    {isAuthenticated === true ? (
                         <UserAccount email={email} />
                     ) : (false)}
                 </>
@@ -65,14 +39,13 @@ const Header = () => {
                             </div>
                         </li>
 
-                        {/* <li><Link to="/inbox">Inbox</Link></li> */}
-
                         <li><Link to="/contact">Contact Us</Link></li>
 
 
-                        {isLogged === true ?
+                        {isAuthenticated === true ?
                             (
                                 <>
+                                <li><Link to="/employee/box">Inbox</Link></li>
                                     <li><Link to="/logout">Sign out</Link></li>
                                 </>
                             ) : (

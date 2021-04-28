@@ -1,4 +1,4 @@
-import "./Inbox.css";
+import "./Box.css";
 
 
 const Inbox = () => {

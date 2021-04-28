@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import * as firebase from "./services/firebase";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer"
@@ -15,54 +16,51 @@ import Detail from './components/Detail';
 import Checkout from "./components/Checkout";
 import MyProfile from './components/MyProfile';
 import PageNotFound from "./components/404";
-// import Inbox from "./components/Inbox";
-import * as firebase from "./services/firebase";
+import Box from "./components/Box";
+import AuthContext from "./contexts/AuthContext";
+import isAuth from "./hoc/isAuth";
 
 
 function App() {
 
-  const [isLogged, setIsLogged] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+    firebase.auth.onAuthStateChanged(setUser)
+  }, [])
 
-    firebase.auth.onAuthStateChanged(function (user) {
-      if (user) {
-        setIsLogged(true)
-      } else {
-        setIsLogged(false)
-      }
-    });
-  }, [setIsLogged])
+  const authInfo = {
+    isAuthenticated: Boolean(user),
+    email: user?.email,
+  }
 
 
   return (
     <div className="App">
-      <Header />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/meals" exact component={Meals} />
-        <Route path="/meals/detail/:productId" exact component={Detail} />
-        <Route path="/meals/detail/:productId/:productName/checkout" component={Checkout} />
-        <Route path="/contact" component={ContactUs} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        {/* <Route paht="/inbox" exact component={Inbox} /> */}
-        {isLogged ? (
-          <>
-            <Route path="/profile" component={MyProfile} />
-            <Route path="/logout" render={props => {
-              firebase.auth.signOut();
-              let keyName = localStorage.key(0);
-              localStorage.removeItem(keyName);
-              return <Redirect to="/" />
-            }} />
-          </>
-        ) : (
-          <PageNotFound />
-        )}
-        <Route path="*" component={PageNotFound} />
-      </Switch>
-      <Footer />
+      <AuthContext.Provider value={authInfo}>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/meals" exact component={Meals} />
+          <Route path="/meals/detail/:productId" exact component={Detail} />
+          <Route path="/meals/detail/:productId/:productName/checkout" component={Checkout} />
+          <Route path="/contact" component={ContactUs} />
+
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+
+          <Route path="/profile" component={isAuth(MyProfile)} />
+          <Route path="/employee/box" component={isAuth(Box)} />
+          <Route path="/logout" render={props => {
+            firebase.auth.signOut();
+            return <Redirect to="/" />
+          }} />
+
+          <Route path="/404" component={PageNotFound} />
+          <Route path="*" component={PageNotFound} />
+        </Switch>
+        <Footer />
+      </AuthContext.Provider>
     </div>
   );
 }
